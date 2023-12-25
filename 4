@@ -1,0 +1,20 @@
+#Lemke Howson Algorithm
+import nashpy as nash
+import numpy as numpy
+
+a = [[4, 8], [2, 9]]
+b = [[1, 7], [5,6]]
+
+battle_of_the_bots = nash.Game(a, b)
+battle_of_the_bots
+
+battle_of_the_bots.lemke_howson(initial_dropped_label=0)  #shows that player one shoud use second strategy as well as player 2
+
+for label in range(4):
+   print(battle_of_the_bots.lemke_howson(initial_dropped_label=label))
+
+all_possibles = battle_of_the_bots.lemke_howson_enumeration()    #This goes through all initial labels
+list(all_possibles)
+
+for all_possible in battle_of_the_bots.support_enumeration():
+   print(all_possible)                                         #Lemke-Howson does not find all equilibria
