@@ -1,0 +1,14 @@
+#Calculating utilities using Nashpy
+import nashpy as nash 
+import numpy as np 
+
+a = [[1, -1], [-1, 1]]      #matching pennies game
+matching_pennies = nash.Game(a)
+matching_pennies 
+
+#Lets say we know the probability distribution for what each player will chose: ex. 0.6 =60%
+row_player = np.array([.6, .7])
+column_player = np.array([.4, .8])
+
+matching_pennies[row_player, column_player]
+#expected utiltiy for each player is .04, and -.04
