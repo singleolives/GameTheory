@@ -1,0 +1,24 @@
+#Respresenting Normal Form Games
+import nashpy as nash
+                     
+   #Prepresenting a game using 2 matricies
+a = [[4, 8], [2, 9]]
+b = [[1, 7], [5,6]]
+
+battle_of_the_bots = nash.Game(a, b)
+battle_of_the_bots
+
+#--------------------------------------------------------------------------
+         #NEW GAME: Matching Pennies
+A = [[1, -1], [-1, 1]]
+B = [[-1, 1], [1, -1]]
+
+matching_pennies = nash.Game(A, B)
+matching_pennies
+                #nashpy knows this is a zero sum game; 
+
+#Another way to do this is:
+matching_pennies = nash.Game(A)
+matching_pennies                 
+
+#with only one martix, nashpy fills in other matrix with reciprical, which calls for a zero sum
