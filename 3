@@ -1,0 +1,31 @@
+#Calculating Nash equilibria using support enumeration
+import nashpy as nash 
+import numpy as np 
+
+A = np.array([[1, 3, -2], [1/2, -1, 2]])       #row player has 2 strategies, column player has 3
+B = np.array([[4, -3, -1/2], [1, 1, -2]])
+game = nash.Game(A, B)
+game
+
+eqs = game.support_enumeration()
+
+for eq in eqs:
+   print(eq)
+                 
+
+eqs = game.support_enumeration()
+list(eqs)
+
+#The answer shows that there is only 1 nash equilibrium: player 1 picks the first option 100% of the times and second option 0%
+                                                      #player 2 picks the first option 100% of the times and the other 2 options 0% ^^^^^^
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+     #New Algorithm called Vertex Enumeration, same result as support_enumeration()
+
+A = np.array([[1, 3, -2], [1/2, -1, 2]])       
+B = np.array([[4, -3, -1/2], [1, 1, -2]])
+game = nash.Game(A, B)
+game
+
+Nash_Es = game.vertex_enumeration()
+list(Nash_Es)
