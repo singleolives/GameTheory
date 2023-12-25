@@ -1,0 +1,22 @@
+#Repeating games with Axelrod
+#Axelrod studies and builds upon the prisoner's dilemma 
+
+import axelrod as axl 
+
+player1 = axl.TitForTat()
+player2 = axl.Alternator()   
+           #now create a match between the players
+match = axl.Match((player1, player2), turns = 10)
+match.play()
+
+match.final_score_per_turn()
+
+#----------------------------------------------------
+     #Create a tournament
+players = [s() for s in axl.demo_strategies]
+tourny = axl.Tournament(players=players, turns= 10, repetitions=4)
+results = tourny.play()
+
+
+axl.__version__
+len(axl.strategies)
