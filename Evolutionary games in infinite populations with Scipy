@@ -1,0 +1,3 @@
+#Evolutionary games in infinite populations with Scipy
+import numpy as np 
+from scipy.integrate import odeint    #ordenary differential equation integrator
