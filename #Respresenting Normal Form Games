@@ -22,3 +22,4 @@ matching_pennies = nash.Game(A)
 matching_pennies                 
 
 #with only one martix, nashpy fills in other matrix with reciprical, which calls for a zero sum
+
