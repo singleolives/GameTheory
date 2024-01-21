@@ -1,4 +1,7 @@
 #Respresenting Normal Form Games
+
+###   https://www.youtube.com/watch?v=3bFCDg2ApP4&list=PLnC5h3PY-znw_SyhvDO3-yH_EWB5z0w_8 ###
+
 import nashpy as nash
                      
    #Prepresenting a game using 2 matricies
