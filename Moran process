@@ -12,3 +12,8 @@ def moran(N, game, i = 1, seed = 0):
    counts = [(population.count(0), population.count(1))]                #This will be the vector that we are interested in
 
 np.random.seed(seed)
+
+
+while len(set(population)) == 2:  #set turns our list of 1s and 0s and turns it into a set, no repetitions
+   
+   scores = []
