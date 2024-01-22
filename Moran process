@@ -1,4 +1,14 @@
 #https://www.youtube.com/watch?v=aD9JX1BqM5Y&list=PLnC5h3PY-znw_SyhvDO3-yH_EWB5z0w_8&index=8
     #Moran Process with Numpy
     #Instead of infinate population, it's finite
+import numpy as np 
+import matplotlib.pyplot as plt
 
+# N= number of individuals, here we will be playing a 2 x 2 game,
+#i = how many individuals are in population at start, seed to make sure everything is reproducable 
+
+def moran(N, game, i = 1, seed = 0):
+   population = [0 for _ in range(i)] + [1 for _ in range(N - i)]
+   counts = [(population.count(0), population.count(1))]                #This will be the vector that we are interested in
+
+np.random.seed(seed)
