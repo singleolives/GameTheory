@@ -1,3 +1,10 @@
-#Evolutionary games in infinite populations with Scipy
+    #Evolutionary games in infinite populations with Scipy
 import numpy as np 
 from scipy.integrate import odeint    #ordenary differential equation integrator
+import matplotlib as mpl 
+
+#Define derivative on the left numerically
+def dx(x, t, A):
+   f = np.dot(A, x)
+   phi = np.dot(f, x)
+   return x * (f - phi)
