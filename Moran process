@@ -10,10 +10,19 @@ import matplotlib.pyplot as plt
 def moran(N, game, i = 1, seed = 0):
    population = [0 for _ in range(i)] + [1 for _ in range(N - i)]
    counts = [(population.count(0), population.count(1))]                #This will be the vector that we are interested in
-
+#set the seed
 np.random.seed(seed)
 
 
 while len(set(population)) == 2:  #set turns our list of 1s and 0s and turns it into a set, no repetitions
    
+#Coding so every player plays every other
+   
    scores = []
+
+   for i, player in enumerate(population):
+      total = 0
+      for j, opponent in enumerate(population):
+         if i != j: 
+            total += game[player, opponent]
+            scores.append(total)
